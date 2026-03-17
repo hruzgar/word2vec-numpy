@@ -2,10 +2,8 @@ import re
 import numpy as np
 from collections import Counter
 
-
 def tokenize(text):
     return re.findall(r"[a-z]+", text.lower())
-
 
 class Vocabulary:
     def __init__(self, tokens, min_count=5):
@@ -29,7 +27,6 @@ class Vocabulary:
                 ids.append(self.word2idx[t])
         return ids
 
-
 def subsample(corpus_ids, vocab, t=1e-5):
     freqs_list = []
     for i in range(vocab.size):
@@ -42,7 +39,6 @@ def subsample(corpus_ids, vocab, t=1e-5):
     rng = np.random.default_rng(42)
     mask = rng.random(len(corpus_ids)) < keep_prob[corpus_ids]
     return corpus_ids[mask]
-
 
 def build_negative_table(vocab, table_size=int(1e7), power=0.75):
     freqs_list = []
@@ -64,7 +60,6 @@ def build_negative_table(vocab, table_size=int(1e7), power=0.75):
     if idx < table_size:
         table[idx:] = vocab.size - 1
     return table
-
 
 def load_text8(path="text8"):
     with open(path, "r", encoding="utf-8") as f:

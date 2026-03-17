@@ -4,7 +4,6 @@ from preprocess import (
     tokenize, Vocabulary, subsample, build_negative_table, load_text8,
 )
 
-
 class Word2Vec:
     def __init__(self, vocab_size, embed_dim=100):
         self.vocab_size = vocab_size
@@ -88,17 +87,14 @@ class Word2Vec:
         self.W_in = data["W_in"]
         self.W_out = data["W_out"]
 
-
 def _sigmoid(x):
     x = np.clip(x, -20, 20)
     return 1.0 / (1.0 + np.exp(-x))
-
 
 def _log_sigmoid(x):
     # log(1/(1+e^-x)) = -log(1+e^-x)
     x = np.clip(x, -20, 20)
     return -np.logaddexp(0, -x)
-
 
 def main():
     import argparse
@@ -136,7 +132,6 @@ def main():
     with open("vocab.pkl", "wb") as f:
         pickle.dump({"word2idx": vocab.word2idx, "idx2word": vocab.idx2word}, f)
     print(f"saved to {args.output}")
-
 
 if __name__ == "__main__":
     main()
