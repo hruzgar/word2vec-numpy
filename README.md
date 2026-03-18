@@ -4,7 +4,7 @@ A word2vec implementation in pure Python/NumPy. This project was created as part
 
 The code was written with the help of the original word2vec paper (Mikolov et al., 2013, ICLR) and its later counterpart on improving efficiency with negative sampling and subsampling (Mikolov et al., 2013, NIPS).
 
-## Training Journey
+## Training
 
 After finishing the implementation, the next step was doing a training run. text8 was the recommended dataset for getting good results, so I tried that first. My laptop couldn't handle it though. After an hour of running it still wasn't finished and the CPU was sitting at around 98°C, so I had to stop.
 
