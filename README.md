@@ -10,7 +10,7 @@ After finishing the implementation, the next step was doing a training run. text
 
 To lessen the load, I switched to a smaller dataset called PTB (Penn Treebank), which is roughly 15x smaller (~700K tokens PTB vs text8 ~17M tokens). The results were disappointing. Even the classic analogy test (man → woman, king → ?) failed to produce anything meaningful.
 
-At that point I wasn't really sure what to do. The task explicitly asked us to use NumPy and most likely didn't want us to go too far from that. So what I ended up doing is creating a separate file, `word2vec_njit.py`, which uses the Numba library to JIT-compile the training loop into optimized machine code that runs in parallel on the CPU. This brought training on text8 down to about 20 minutes on my laptop.
+At that point I wasn't really sure what to do. The task explicitly asked us to use NumPy and most likely didn't want us to go too far from that. So what I ended up doing is creating a separate file, `word2vec_njit.py`, which uses the Numba library to JIT-compile the training loop into optimized machine code that runs in parallel on the CPU. This brought training on text8 down to about 20 minutes on my laptop and the results were also quite good.
 
 While working on the parallelized version, I noticed that the poor results on PTB might not have been caused by the smaller dataset size but by problems in the training logic itself. Unfortunately I ran out of time before I could go back and verify this, so it's something I'd still like to revisit.
 
