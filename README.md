@@ -17,7 +17,9 @@ While working on the parallelized version, I noticed that the poor results on PT
 ## Results
 
 dataset: text8
+
 embedding dimensions: 100
+
 training epochs: 5
 
 
