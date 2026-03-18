@@ -16,14 +16,14 @@ While working on the parallelized version, I noticed that the poor results on PT
 
 ## Results
 
-dataset: text8
-
-embedding dimensions: 100
-
-training epochs: 5
-
-
 ```
+Configuration:
+	dataset: text8
+	embedding dimensions: 100
+	training epochs: 5
+	
+Results:
+
 nearest neighbors
 --------------------------------------------------
   king         -> lulach (0.798), pretender (0.789), eochaid (0.785), plantagenet (0.784), canute (0.780)
